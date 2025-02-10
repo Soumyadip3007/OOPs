@@ -19,16 +19,23 @@ void Sub_seq(int arr[], int n, int index, vector<int>&temp, vector<vector<int>>&
 
 int main()
 {
-    int arr[] = {1,2,3};
+    int arr[] = {0,1,2,3};
     int n = sizeof(arr)/sizeof(arr[0]);
     vector<vector<int>>ans;
     vector<int>temp;
     Sub_seq(arr,n,0,temp,ans);
     for(int i=0;i<ans.size();i++)
     {
-        for(int j=0;j<ans[i].size();j++)
+        if(ans[i].empty())
         {
-            cout<<ans[i][j]<<" ";
+            cout<<"{}";
+        }
+        else
+        {
+            for(int j=0;j<ans[i].size();j++)
+            {
+                cout<<ans[i][j]<<" ";
+            }
         }
         cout<<endl;
     }
